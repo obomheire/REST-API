@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { omit } from "lodash";
 // import { omit } from "lodash";
 import { CreateUserInput } from "../schema/user.schema";
 import { createUser } from "../service/user.service";
@@ -10,7 +11,9 @@ export async function createUserHandler(req: Request<{}, {}, CreateUserInput["bo
   try {
     const user = await createUser(req.body)
 
-    return res.send(user)
+    // Omit the password from the body of the response
+
+    return res.send(omit(user.toJSON(), "password"))
 
   } catch (e: any) {
 
