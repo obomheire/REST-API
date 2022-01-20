@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { AnyZodObject } from "zod";
 
+// REQUEST DATA VALIDATION MIDDLEWARE
+
 const validate =
   (schema: AnyZodObject) =>
   (req: Request, res: Response, next: NextFunction) => {

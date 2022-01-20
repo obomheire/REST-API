@@ -1,5 +1,8 @@
+//SETTING THE CONFIGURATION FILE
+
 export default {
     port: 1337,
-    dbUri: "mongodb://localhost:27017/rest-api"
+    dbUri: "mongodb://localhost:27017/rest-api",
+    saltWorkFactor: 10,
 
 }
