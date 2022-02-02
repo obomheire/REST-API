@@ -66,6 +66,6 @@ const userSchema = new mongoose.Schema(
     return bcrypt.compare(candidatePassword, user.password).catch((e) => false);
   };
 
-  const UserModel = mongoose.model('User', userSchema)
+  const UserModel = mongoose.model<UserDocument>('User', userSchema)
 
   export default UserModel
